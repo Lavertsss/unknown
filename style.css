@@ -1,19 +1,55 @@
 body {
     background-color: #edc780;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
+    animation: fadeIn 4s;
+}
+
+#titlebody:active > #title{
+  animation: Shake 100ms linear infinite;
 }
 
 body::-webkit-scrollbar{
     display: none;
   }
 
+
 #title {
     justify-content: center;
     display: flex;
     text-align: center;
     font-size: 40px;
-    margin-top: 25vh;
-    animation: fadeIn 5s;
+    padding-top: 300px;
+    margin-bottom: 25%;;
+  }
+
+  .titlefade {
+    animation: fadeIn 4s;
+  }
+
+.p1 {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 50px;
+  animation: Up-Down1 1s linear infinite;
+}
+.p2 {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 50px;
+  animation: Up-Down2 1s linear infinite;
+}
+.p3 {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 50px;
+  animation: Up-Down3 1s linear infinite;
 }
 
   .button {
@@ -32,23 +68,99 @@ body::-webkit-scrollbar{
     font-weight:600;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 700px;
+    margin-top: 0px;
     animation: MoveUpDown 1s linear infinite;
     width: 20px;
     text-decoration: none;
   }
 
+  .button:hover {
+    background-color: white;
+    border-color: white;
+    color: #000000;
+  }
+
+  .button:active {
+    background-color: white;
+    border-color: white;
+    color: #000000;
+
+  }
+
+  @keyframes Shake {
+    0%, 100% {
+      transform: translateY(0);
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateY(-2px);
+      transform: translateX(-2px);
+    }
+
+    40% {
+      transform: translateY(-2px);
+      transform: translateX(2px);
+    }
+
+    60% {
+      transform: translateY(2px);
+      transform: translateX(2px);
+    }
+
+    80% {
+      transform: translateY(2px);
+      transform: translateX(-2px);
+    }
+  }
 
   @keyframes MoveUpDown {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
     }
   }
 
-  
+  @keyframes Up-Down1 {
+    0%, 10% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-10px);
+    }
+
+    30% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes Up-Down2 {
+    0%, 10% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+
+    40% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes Up-Down3 {
+    0%, 10% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+
+    50% {
+      transform: translateY(0);
+    }
+  }
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
