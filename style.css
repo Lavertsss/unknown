@@ -3,24 +3,49 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     user-select: none;
     animation: fadeIn 4s;
+    scroll-behavior: smooth;
+    overflow-y:hiddn;
 }
 
-#titlebody:active > #title{
+
+#page1:active > #page1body{
+  animation: Shake 100ms linear infinite;
+}
+
+#title:active > #titlebody{
   animation: Shake 100ms linear infinite;
 }
 
 body::-webkit-scrollbar{
-    display: none;
+    scroll-behavior: smooth;
+
+  }
+
+#title {
+  display: block;
+  flex-direction: row;
+  text-align: justify;
+  padding-top: 15%;
+  padding-bottom: 10%;
+
+}
+
+#titlebody {
+    justify-content: center;
+  display: flex;
+  flex-direction: row;
+    text-align: center;
+    font-size: 40px;
   }
 
 
-#title {
+  #page1body{
     justify-content: center;
-    display: flex;
     text-align: center;
-    font-size: 40px;
-    padding-top: 300px;
-    margin-bottom: 25%;;
+    font-size: 5rem;
+    color: #000000;
+    display: flex;
+
   }
 
   .titlefade {
@@ -66,9 +91,10 @@ body::-webkit-scrollbar{
     text-align: center;
     justify-content: center;
     font-weight:600;
+    margin-top: 40vh;
+    margin-bottom: 100vh;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0px;
     animation: MoveUpDown 1s linear infinite;
     width: 20px;
     text-decoration: none;
@@ -81,11 +107,42 @@ body::-webkit-scrollbar{
   }
 
   .button:active {
+    animation: Arrowswoop 2s;
+    display: none, 2s;
+  }
+
+  .button2 {
+    border: 5px solid rgb(0, 0, 0);
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border-radius: 100px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight:600;
+    margin-top: 0vh;
+    margin-left: auto;
+    margin-right: auto;
+    animation: MoveUpDown 1s linear infinite;
+    width: 20px;
+    text-decoration: none;
+  }
+
+  .button2:hover {
     background-color: white;
     border-color: white;
     color: #000000;
-
   }
+
+  .button2:active #page1 {
+    animation: Arrowswoop 2s;
+  }
+
 
   @keyframes Shake {
     0%, 100% {
@@ -118,7 +175,7 @@ body::-webkit-scrollbar{
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
     }
   }
 
@@ -152,11 +209,11 @@ body::-webkit-scrollbar{
     0%, 10% {
       transform: translateY(0);
     }
-    40% {
+    45% {
       transform: translateY(-10px);
     }
 
-    50% {
+    55% {
       transform: translateY(0);
     }
   }
