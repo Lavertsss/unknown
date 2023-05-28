@@ -8,7 +8,7 @@ body {
     user-select: none;
     animation: fadeIn 4s;
     scroll-behavior: smooth;
-    overflow-y:hidden;
+    overflow-y:hidde;
 }
 
 #page1:active > #page1body{
@@ -27,6 +27,7 @@ body::-webkit-scrollbar{
   display: grid;
   flex-direction: row;
   text-align: justify;
+  max-height: 2000px
 }
 
 #titlebody {
@@ -39,12 +40,12 @@ body::-webkit-scrollbar{
   }
 
   #spacing {
-    margin-top: 2000px;
-    margin-bottom: 2000px;
+    margin-top: 1000px;
+    margin-bottom: 1000px;
   }
 
   #page1body{
-    display: flex;
+    display: grid;
     justify-content: center;
     text-align: center;
     font-size: 5rem;
@@ -54,6 +55,10 @@ body::-webkit-scrollbar{
     max-height: 1440px;
     margin-top: 10vh;
     margin-bottom: 40vh;
+  }
+
+  .comma {
+    animation: fadeinout 2s linear infinite;
   }
 
   .titlefade {
@@ -106,17 +111,19 @@ body::-webkit-scrollbar{
     animation: MoveUpDown 1s linear infinite;
     width: 20px;
     text-decoration: none;
+    opacity: 0.25;
   }
 
   .button:hover {
-    background-color: white;
-    border-color: white;
-    color: #000000;
     animation: Arrowswoop 500ms;
+    transition: opacity 2000ms;
+    opacity: 1;
   }
 
   .button:active {
     animation: Arrowswoop 500ms;
+    transition: opacity 2000ms;
+    opacity: 1;
   }
 
   .button2 {
@@ -139,17 +146,19 @@ body::-webkit-scrollbar{
     animation: MoveUpDown 1s linear infinite;
     width: 20px;
     text-decoration: none;
+    opacity: 0.25;
   }
 
   .button2:hover {
-    background-color: white;
-    border-color: white;
-    color: #000000;
+    transition: opacity 2000ms;
+    opacity: 1;
     animation: Arrowswoop2 500ms;
   }
 
   .button2:active {
     animation: Arrowswoop2 500ms;
+    transition: opacity 2000ms;
+    opacity: 1;
   }
 
   .button3 {
@@ -171,19 +180,28 @@ body::-webkit-scrollbar{
     text-decoration: none;
     margin-left: auto;
     margin-right: auto;
+    opacity: 0.25;
   }
 
   .button3:hover {
-    background-color: white;
-    border-color: white;
-    color: #000000;
     animation: Arrowswoop 500ms;
+    transition: opacity 2000ms;
+    opacity: 1;
   }
 
   .button3:active {
     animation: Arrowswoop 500ms;
+    transition: opacity 2000ms;
+    opacity: 1;
   }
-  
+
+  .button3:active > #page1body {
+    animation: lefttransition 2s linear infinite;
+  }
+
+  @keyframes lefttransition {
+    unfinished
+  }
 
   @keyframes Arrowswoop {
     100% {
@@ -194,6 +212,16 @@ body::-webkit-scrollbar{
   @keyframes Arrowswoop2 {
     100% {
       transform: rotate(1080deg);
+    }
+  }
+
+  @keyframes fadeinout {
+    0%, 100%{
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
     }
   }
 
